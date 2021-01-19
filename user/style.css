@@ -1,0 +1,150 @@
+header img {
+    height: 80px;
+    margin-left: 40px;
+
+}
+
+body {
+    height: 125vh;
+    background-image: url('https://thumbs.dreamstime.com/z/kitchen-seamless-pattern-variety-vegetables-light-green-background-vector-illustration-your-design-50287830.jpg');
+    background-size: cover;
+    font-family: sans-serif;
+    margin-top: 80px;
+    padding: 30px;
+}
+
+main {
+    color: white;
+}
+
+header {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+
+    align-items: center;
+    /*box-shadow: 0 0 25px 0 black;*/
+
+}
+
+header1 {
+    background-color: #4CAF50;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    display: flex;
+    box-shadow: -10px 20px 25px 0 black;
+
+}
+header1 * {
+    display: inline;
+    align-content: center;
+    align-items: center;
+}
+
+header1 li {
+  color: white;
+    margin: 20px;
+   padding: 25px 16px;
+   font-size: 40px;
+    align-items: center;
+
+}
+
+/*header1 li a {
+    color: white;
+    text-decoration: none;
+    height: 80px;
+
+    align-items: center;
+    padding-left: 50%;
+
+}*/
+
+
+header * {
+    display: inline;
+}
+
+header li {
+    margin: 20px;
+   padding: 25px 16px;
+   font-size: 20px;
+}
+
+header li a {
+    color: black;
+    text-decoration: none;
+    height: 80px;
+
+}
+
+header li :hover{
+  color: #4CAF50;
+  /*padding: 30px;
+   margin: -17px;*/
+}
+
+header a.active {
+  background-color: #4CAF50;
+  color: white;
+   padding: 30px;
+   margin: -25px -16px;
+}
+
+footer{
+  background-color: rgb(248,248,248);
+    position: fixed;
+    top: 131px;
+    left: 0;
+    right: 1270px;
+    height: 450px;
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    box-shadow: 5px 10px 25px 0 black;
+}
+
+footer li{
+   margin: 5px;
+   align-items: center;
+   text-align-last: center;
+   font-size: 25px;
+}
+
+footer * {
+    display: inline-grid;
+    align-items: center;
+    text-align-last: center;
+    align-content: center;
+}
+
+footer li a {
+    color: black;
+    text-decoration: none;
+    height: 60px;
+    width: 150px;
+    align-content: center;
+    
+}
+
+
+footer li :hover{
+  color: #4CAF50;
+}
+
+
+
+footer  a.active {
+  background-color: #4CAF50;
+  color: white;
+   padding-right: 40px;
+  padding-left: 40px;
+  margin-left: -35px;
+}

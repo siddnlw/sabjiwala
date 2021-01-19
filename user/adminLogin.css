@@ -1,0 +1,569 @@
+@import "compass/css3";
+ *, *:before, *:after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+ html, body {
+   font-size: 62.5%;
+   height: 100%;
+   overflow: hidden;
+}
+ @media (max-width: 768px) {
+   html, body {
+     font-size: 50%;
+  }
+}
+ svg {
+   display: inline-block;
+   width: 2rem;
+   height: 2rem;
+   overflow: visible;
+}
+svg:hover {
+  cursor: pointer;
+  /*fill: red;*/
+  color: #F7941E;
+}
+ .svg-icon {
+   cursor: pointer;
+}
+ .svg-icon path {
+   stroke: rgba(255, 255, 255, 0.9);
+   fill: none;
+   stroke-width: 1;
+}
+ input, button {
+   outline: none;
+   border: none;
+}
+ .cont {
+   position: relative;
+   height: 100%;
+   background-image: url('slider.jpg');
+   background-size: cover;
+   overflow: auto;
+   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+ .demo {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-left: -15rem;
+   margin-top: -26.5rem;
+   width: 30rem;
+   height: 53rem;
+   overflow: hidden;
+}
+ .login {
+   position: relative;
+   height: 110%;
+   background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+   transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+   transform: scale(1);
+}
+ .login.inactive {
+   opacity: 0;
+   transform: scale(1.1);
+}
+.header__center {
+    /*font-size: 2rem;*/
+    display: grid;
+    color: lightgrey;
+    /*top: 55%;*/
+    grid-template-columns: 1fr max-content 1fr;
+    grid-column-gap: 0.5rem;
+    align-items: center;
+    /*border-top: 1px solid grey;*/
+    font-size: 20px;
+    margin-top: 15%;
+}
+.forget:hover{
+  color:red;
+}
+
+.header__center::before,
+.header__center::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: currentColor;
+}
+ .login__form {
+   position: absolute;
+   top: 35%;
+   left: 0;
+   width: 100%;
+   height: 65%;
+   bottom: 100%;
+   padding: 1.5rem 2.5rem;
+   text-align: center;
+}
+ .login__row {
+   height: 5rem;
+   padding-top: 1rem;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+   border-color: #fff;
+
+}
+ .login__icon {
+   margin-bottom: -0.4rem;
+   margin-right: 0.5rem;
+}
+ .login__icon.name path {
+   stroke-dasharray: 73.5019607544;
+   stroke-dashoffset: 73.5019607544;
+   animation: animatePath 2s 0.5s forwards;
+}
+ .login__icon.pass path {
+   stroke-dasharray: 92.106628418;
+   stroke-dashoffset: 92.106628418;
+   animation: animatePath 2s 0.5s forwards;
+}
+ .login__input {
+   display: inline-block;
+   width: 22rem;
+   height: 100%;
+   padding-left: 1.5rem;
+   font-size: 1.5rem;
+   background: transparent;
+   color: #fdfcfd;
+}
+ .login__submit {
+   position: relative;
+   width: 100%;
+   height: 4rem;
+   top: 9%;
+   color: rgba(255, 255, 255, 0.8);
+   background: #ED1C23;
+   font-size: 1.5rem;
+   border-radius: 3rem;
+   cursor: pointer;
+   overflow: hidden;
+   transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+}
+ .create {
+   position: relative;
+   width: 70%;
+   height: 4rem;
+   top: 2%;
+   color: rgb(255,255,255,0.8);
+   /*background-color: #F7941E;*/
+   /*background-color: #ED1C23;*/
+   background-color: #8CC63F;
+   font-size: 1.2rem;
+   border-radius: 3rem;
+   cursor: pointer;
+   overflow: hidden;
+   transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+}
+.create:hover{
+   z-index: 1000;
+}
+ .login__submit:after {
+   content: "";
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-left: -1.5rem;
+   margin-top: -1.5rem;
+   width: 3rem;
+   height: 3rem;
+   border: 2px dotted #fff;
+   border-radius: 50%;
+   border-left: none;
+   border-bottom: none;
+   transition: opacity 0.1s 0.4s;
+   opacity: 0;
+}
+ .login__submit.processing {
+   width: 4rem;
+   font-size: 0;
+}
+ .login__submit.processing:after {
+   opacity: 1;
+   animation: rotate 0.5s 0.4s infinite linear;
+}
+ .login__submit.success {
+   transition: transform 0.3s 0.1s ease-out, opacity 0.1s 0.3s, background-color 0.1s 0.3s;
+   transform: scale(30);
+   opacity: 0.9;
+}
+ .login__submit.success:after {
+   transition: opacity 0.1s 0s;
+   opacity: 0;
+   animation: none;
+}
+ .login__signup {
+   font-size: 1.2rem;
+   color: #aba8ae;
+}
+ .login__signup a {
+   color: #fff;
+   cursor: pointer;
+}
+ .app {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   opacity: 0;
+   display: none;
+   transition: opacity 0.1s, transform 0.3s cubic-bezier(0.68, -0.45, 0.465, 1.25);
+   transform: scale(1.2);
+}
+ .app.active {
+   opacity: 1;
+   transform: scale(1);
+}
+ .app.active .app__user-photo {
+   transform: scale(1);
+}
+ .app.active .app__meeting {
+   transform: translateY(0);
+   opacity: 1;
+}
+ .app.active .app__logout {
+   transform: scale(1);
+}
+ .app__top {
+   position: relative;
+   height: 28rem;
+   background: rgba(0, 0, 0, 0.5);
+   padding: 6rem 1.5rem 2rem;
+   text-align: center;
+}
+ .app__bot {
+   position: relative;
+   height: 25rem;
+   background: #fff;
+}
+ .app__menu-btn {
+   position: absolute;
+   top: 2rem;
+   left: 1.5rem;
+   width: 1.8rem;
+   height: 1.7rem;
+   cursor: pointer;
+}
+ .app__menu-btn span, .app__menu-btn:before, .app__menu-btn:after {
+   position: absolute;
+   left: 0;
+   width: 100%;
+   height: 1px;
+   background: rgba(255, 255, 255, 0.6);
+}
+ .app__menu-btn span {
+   top: 0.8rem;
+}
+ .app__menu-btn:before {
+   content: "";
+   top: 0;
+}
+ .app__menu-btn:after {
+   content: "";
+   bottom: 0;
+}
+ .app__icon {
+   position: absolute;
+   top: 2rem;
+}
+ .app__icon.search {
+   right: 1.5rem;
+   stroke-dasharray: 61.8471374512;
+   stroke-dashoffset: 61.8471374512;
+   animation: animatePath 0.5s 0.5s forwards;
+}
+ .app__hello {
+   font-size: 2.2rem;
+   color: #fff;
+   font-weight: normal;
+   margin-bottom: 3rem;
+}
+ .app__logout {
+   position: absolute;
+   bottom: 3.3rem;
+   right: 3.3rem;
+   width: 4.6rem;
+   height: 4.6rem;
+   margin-right: -2.3rem;
+   margin-bottom: -2.3rem;
+   background: #fc3768;
+   color: #fff;
+   font-size: 2rem;
+   border-radius: 50%;
+   cursor: pointer;
+   transition: bottom 0.4s 0.1s, right 0.4s 0.1s, transform 0.4s 0.4s, opacity 0.1s 0.7s, background-color 0.1s 0.7s;
+   transform: scale(0);
+}
+ .app__logout.clicked {
+   bottom: 50%;
+   right: 50%;
+   transform: scale(30) !important;
+   opacity: 0.9;
+}
+ .app__logout.clicked svg {
+   opacity: 0;
+}
+ .app__logout-icon {
+   position: absolute;
+   width: 3rem;
+   height: 3rem;
+   top: 50%;
+   left: 50%;
+   margin-left: -1.5rem;
+   margin-top: -1.5rem;
+   transition: opacity 0.1s;
+}
+ .app__logout-icon path {
+   stroke-width: 4px;
+   stroke-dasharray: 64.3623504639;
+   stroke-dashoffset: 64.3623504639;
+   animation: animatePath 0.5s 0.5s forwards;
+}
+ .ripple {
+   position: absolute;
+   width: 15rem;
+   height: 15rem;
+   margin-left: -7.5rem;
+   margin-top: -7.5rem;
+   background: rgba(0, 0, 0, 0.4);
+   transform: scale(0);
+   animation: animRipple 0.4s;
+   border-radius: 50%;
+}
+ @keyframes animRipple {
+   to {
+     transform: scale(3.5);
+     opacity: 0;
+  }
+}
+ @keyframes rotate {
+   to {
+     transform: rotate(360deg);
+  }
+}
+ @keyframes animatePath {
+   to {
+     stroke-dashoffset: 0;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+a {
+  text-decoration: none;
+}
+.btn {
+  align-items: center;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  padding: 1em 3.5em;
+  text-align: center;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  position: relative;
+   width: 100%;
+   height: 4rem;
+   margin: 5rem 0 2.2rem;
+   font-size: 1.5rem;
+   border-radius: 3rem;
+   cursor: pointer;
+   overflow: hidden;
+   transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+}
+.btn-primary {
+  background: #ED1C23;
+  color: rgba(255, 255, 255, 0.8);
+}
+.btn-primary::before {
+  background: #FF1493;
+  bottom: 0;
+  color: white;
+  content: '';
+  display: inline-block;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: skewX(-35deg) translateX(-115%);
+  transition: transform 0.5s cubic-bezier(0, 0.25, 0.5, 1);
+  width: 50%;
+}
+.btn-label {
+  position: relative;
+}
+.login__submit:hover::before {
+  transform: skewX(-15deg) translateX(0) scaleX(1.35);
+}
+.login__submit:hover{
+   z-index: 1000;
+   background-color: #F7941E;
+}
+input {
+  color: #8cc63f;
+}
+::placeholder {
+  color: #ED8F23;
+  opacity: 0.8;
+}
+:focus{outline: none;}
+.login__input ~ .focus-border{
+  position: absolute; bottom: -1px; left: 0; width: 0; height: 2px; background-color: #F7941E; transition: 0.4s;
+}
+.login__input:focus ~ .focus-border{
+  width: 100%; transition: 0.4s;
+}
+.login__row{
+  float: left;  position: relative;
+}
+.svg-icon ~ .focus-border{
+  position: absolute; bottom: -1px; left: 0; width: 0; height: 2px; background-color: #F7941E; transition: 0.4s;
+}
+.svg-icon:focus ~ .focus-border{
+  width: 100%; transition: 0.4s;
+}
+.placeholder{
+  position: absolute;
+  left:35px;
+  top: 13px;
+  transition: all ease 0.2s;
+  -webkit-transition:all ease 0.2s;
+  font-size: 14px;
+  color: white;
+  opacity:0.7;
+}
+input:focus ~ label{
+  top: -3px;
+  font-size: 10px;
+  opacity: 1;
+  color: #f7941e;
+}
+input:not([value=""]):not(:focus):invalid ~label{
+  top: -3px;
+  font-size: 10px;
+  opacity: 1;
+  color: #f7941e;
+}
+input:required:invalid:not(:placeholder-shown):focus ~label{
+  color:red;
+}
+input:not([value=""]):not(:focus):valid ~label{
+  top: -3px;
+  font-size: 10px;
+  opacity: 1;
+  font-size: 12px;
+  color: #8CC63F;
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+input:not([value=""]):not(:focus):invalid ~label{
+  color: red;
+  font-size: 15px;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+#container {
+    overflow:hidden;
+    position:relative;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+#invalid {
+  -webkit-animation: cssAnimation 5s forwards; 
+  animation: cssAnimation 5s forwards;
+}
+@keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+@-webkit-keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+#icon-eye {
+  width: 40px;
+  /*margin: auto;*/
+  padding: 20px;
+  margin-top: -50px;
+  margin-left: 200px;
+  /*resize: horizontal;*/
+  overflow: auto;
+  /* set the icon color */
+  color: white;
+  overflow: hidden;
+}
+
+button:hover { cursor: pointer; }
+
+
+.eye-open button::after { content: "Close"; }
+
+.eye-close button::after { content: "Open"; }
+#eye {
+          /* set these to blink faster/slower */
+          --duration-blink: .2s;
+          --duration-lashes: .2s;
+          
+          /* calculated and fixed vars */
+          --delay-lashes: var(--duration-blink);
+          --duration-pupil: .1s;
+          --delay-pupil: calc(var(--duration-blink)*2/3);
+        }
+
+        #eye-bottom, #eye-top { stroke-linecap: round; }
+
+        #eye-top, #eye-lashes { transition: var(--duration-blink) ease-in; }
+
+        #eye-pupil {
+          opacity: 0;
+          transition: opacity var(--duration-pupil) var(--delay-pupil) ease;
+        }
+
+        /* open state */
+        .eye-open #eye-top,
+        .eye-open #eye-lashes {
+          transform: rotateX(.5turn);
+          color: #F7941E;
+          animation: scaleUp var(--duration-lashes) var(--delay-lashes) ease-in-out;
+        }
+
+        .eye-open #eye-pupil { opacity: 1;color: #F7941E; }
+.eye-open #eye-bottom{
+          color: #F7941E;
+        }
+        /* close state */
+        .eye-close #eye-lashes { animation: scaleDown var(--duration-lashes) var(--duration-blink) ease-in-out; }
+
+        .eye-close #eye-pupil { opacity: 0; }
+
+        /* keyfranes */
+        @keyframes scaleUp {
+          50% { transform: rotateX(.5turn) scaleY(1.15); }
+          to { transform: rotateX(.5turn) scaleY(1); }
+        }
+
+        @keyframes scaleDown {
+          50% { transform: scaleY(1.15); }
+          to { transform: scaleY(1); }
+        }

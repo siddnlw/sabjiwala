@@ -1,0 +1,757 @@
+body{
+	padding-top: 100px;
+}
+.container{
+  background-color: hsl(227, 47%, 96%,0.7);
+  height: auto;
+  width: fixed;
+  margin-top: 50px;
+  padding-top: 5px;
+  margin-left: 250px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 30px;
+  overflow: hidden;
+  align-items: center;  
+  align-content: center;
+  align-self: center;
+}
+.products{
+	margin-left: 5%;
+	/*margin-right: 5%;*/
+	z-index: -1 !important;
+	display: hidden;
+	grid-auto-flow: column;
+    grid-column-gap: 50px;
+	overflow: hidden;
+    align-items: center;    
+    width: 1200px;
+	align-content: center;
+	transition: 0.9s;
+}
+
+.items{
+	border: 1px solid black;
+	transition: 0.9s;
+	float: left;
+	z-index: -1 !important;
+	background-color: rgb(255, 255, 255,0.6);
+	text-align: center;
+	height: 250px;
+	width: 250px;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	margin-left: 20px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row-reverse;
+}
+.but{
+	display: flex;
+	/*justify-content: space-around;*/
+	flex-direction: row;
+}
+img {
+  height: 100px;
+  width: 100px;
+}
+.edit{
+  border: none;
+  background-color: #77d677;
+  height: 40px;
+  width: 60px;
+  border-radius: 25px;
+  font-size: 14px;
+  transition: 0.5s;
+}
+.edit:hover{
+  background-color: #55d63b;
+  transition: 0.5s;
+  font-size: 17px;
+}
+.del{
+  border: none;
+  background-color: #FF6347;
+  height: 40px;
+  width: 60px;
+  font-size: 14px;
+  transition: 0.5s;
+  border-radius: 25px;
+}
+.del:hover{
+	transition: 0.5s;
+  font-size: 17px;
+  background-color: #FF4500;
+}
+.cancelbtn, .deletebtn{
+  background-color: red;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  margin-left: 200px;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  opacity: 0.9;
+  border-radius: 50px;
+}
+.cancelbtn, .deletebtn:hover {
+  opacity:1;
+}
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 30%;
+  margin-left: 150px;
+}
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+/* Add padding and center-align text to the container */
+.box {
+  padding: 16px;
+  text-align: center;
+}
+@keyframes popup {
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  10%{
+    transform: scale(0.2);
+    opacity: 0.2;
+  }
+  20%{
+    transform: scale(0.4);
+  opacity: 0.4;
+  }
+  30%{
+    transform: scale(0.6);
+  opacity: 0.6;
+  }
+  40%{
+    transform: scale(0.8);
+  opacity: 0.8;
+  }
+  50%{
+    transform: scale(1);
+    /*opacity: 0;*/
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  align-content: center;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  /*overflow: auto;  Enable scroll if needed */
+  background-color: rgb(71, 78, 93,0.9);
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 8% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+animation: popup 0.7s;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 80px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .deletebtn {
+     width: 100%;
+  }
+}
+.products .items :hover{
+	box-shadow: 0px 0px #888888;
+}
+.items:hover{
+	box-shadow: 10px 10px rgb(119, 127, 120,0.3);
+	background-color: rgb(255, 255, 255);
+	transition: 0.3s;
+}
+.hideDetails{
+	border: none;
+	background-color: transparent;
+	margin-left: 210px;
+	padding-bottom: 15px;
+	padding-right: 19px;
+	padding-left: 19px;
+	padding-top: 10px;
+	outline: none;
+	border-bottom-left-radius: 50px;
+}
+.hideDetails:hover{
+	background-color: rgb(225, 237, 225, 0.5);
+}
+.hideDetails:focus{
+outline:none;
+}
+.showDetails{
+	z-index: -0.1;
+	border: none;
+	background-color: transparent;
+	margin-left: 210px;
+	padding-bottom: 10px;
+	padding-right: 19px;
+	padding-left: 15px;
+	padding-top: 5px;
+	outline: none;
+	border-bottom-left-radius: 50px;
+}
+.showDetails:hover{
+	background-color: white;
+}
+.showDetails:focus{
+outline:none;
+}
+.sho{
+	background-color: #e5e5e5;
+   -webkit-transition: all 0.5s ;
+   -moz-transition: all 0.5s ;
+   -o-transition: all 0.5s ;
+   -ms-transition: all 0.5s ;
+   transition: all 0.5s ;
+	outline: none;
+  border: none;
+	border-bottom-left-radius: 0px;
+}
+.hid{
+	border: none;
+	background-color: transparent;
+	margin-left: 210px;
+	outline: none;
+	padding-top: 5px;
+	border-bottom-left-radius: 50px;
+  -webkit-transition: all 0.5s ;
+    -moz-transition: all 0.5s ;
+    -o-transition: all 0.5s ;
+    -ms-transition: all 0.5s ;
+    transition: all 0.5s ;
+}
+.det {
+	display: none;
+	text-align: center;
+	position: relative;
+}
+.hide{
+	display: none;
+	border: none;
+	background-color: transparent;
+	border-bottom-left-radius: 50px;
+  -webkit-transition: all 0.5s ;
+    -moz-transition: all 0.5s ;
+    -o-transition: all 0.5s ;
+    -ms-transition: all 0.5s ;
+    transition: all 1s ;
+}
+.show{
+	display: block;
+	background-color: #e5e5e5;
+	float:right;
+	text-align: center;
+   -webkit-transition: all 0.5s ;
+   -moz-transition: all 0.5s ;
+   -o-transition: all 0.5s ;
+   -ms-transition: all 0.5s ;
+   transition: all 0.5s ;
+	border-bottom-left-radius: 0px;
+
+}
+.hid:hover{
+	background-color: #e5e5e5;
+   transition: 0.5s ;
+   padding-right: 11px;
+	padding-top: 5px;
+	padding-left: 15px;
+	padding-bottom: 10px;
+}
+.der{
+	background-color: #e5e5e5;
+	transition: 2s;
+	padding: 100px;
+	 transform: translate(0,-10px);
+    -webkit-transform: translate(0,-10px);
+    -o-transform: translate(0,-10px); 
+    -moz-transform: translate(0,-10px);
+  position:absolute;
+  display:none;
+}
+.s{
+	transition: 2s;
+	display: block;
+	transform: translate(0,-170px);
+    -webkit-transform: translate(0,-170px);
+    -o-transform: translate(0,-170px); 
+    -moz-transform: translate(0,-170px);
+}
+.h{
+	transition: 2s;
+	display: none;
+	 transform: translate(0,-50px);
+    -webkit-transform: translate(0,-100px);
+    -o-transform: translate(0,-50px); 
+    -moz-transform: translate(0,-50px);
+}
+.add_info {
+	height: 100%;
+	width: 100%;
+	margin-right: -100%;
+	transition: 1s;
+	background-color: rgb(225, 237, 225, 0.5);
+}
+.un{
+
+	margin-top: -50px;
+	font-size: 30px;
+	background-color: rgb(120,120,120,0.7);
+	transform: translate(-10px,0);
+    -webkit-transform: translate(0,150px);
+    /*-o-transform: translate(0,-50px); */
+    /*-moz-transform: translate(0,-50px);*/
+
+}
+.curr_info {
+	z-index: -0.1;
+	height: 100%;
+	width: 100%;
+	/*display: hidden;*/
+	/*overflow: hidden;*/
+	
+}
+ .Unavailable{
+
+	/*background-color: red;*/
+	pointer-events: none;
+	-webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.showing {
+	margin-right: 0%;
+	transition: 1s;
+}
+.hideSales{
+	float: left;
+	border: none;
+	/*top: 40px;*/
+	margin-top: -40px;
+	background-color: transparent;
+	/*padding-bottom: 15px;*/
+	/*padding-right: 19px;*/
+	/*padding-left: 19px;*/
+	/*padding-top: 10px;*/
+	outline: none;
+	/*border-radius: 30px;*/
+
+}
+.AddToCart{
+	width: 120px;
+	margin-top: 5px;
+	border-radius: 25px;
+	margin-left: 65px;
+	height: 40px;
+	border:none;
+	outline: none;
+	background-color: #5ed161;
+
+}
+.AddToCart:hover{
+	background-color: #54c458;
+}
+
+
+
+
+.mySlides {display: none}
+/*img .slideshow-container {vertical-align: middle;}*/
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  /*padding: 0% 2%;*/
+  overflow: hidden;
+  background-color: lightgrey;
+  height: 450px;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev ,.next{
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  /*float: left;*/
+  background-color: rgb(0,0,0,0.6);
+  border-radius: 250px 0 0 250px;
+  transition: 1s;
+}
+.prev{
+	background-color: rgb(0,0,0,0.6);
+  transition: 1s;
+  border-radius: 0 250px 250px 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover {
+	transition: 0.5s;
+	border-radius: 0 0 0 0;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.next:hover {
+	transition: 0.5s;
+	border-radius: 0 0 0 0;
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  background-color: rgb(0,0,0,0.5);
+  font-size: 15px;
+  /*padding: 8px 12px;*/
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  background-color: rgb(0,0,0,0.5);
+  border-bottom-right-radius: 20px;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+/*.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 5s;
+  opacity: 1;
+}
+
+@-webkit-keyframes fade {
+  0%,100% { opacity: 0 }
+  50% { opacity: 1 }
+}
+
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  50% { opacity: 1 }
+}*/
+
+/*.out {
+  
+  animation-name: out;
+  animation-duration: 5s;
+  margin-left: 0;
+  animation-delay: 4s;
+
+}
+
+@keyframes out {
+  0% {margin-left: 100%} 
+  50% {margin-left: 0}
+  100%{margin-left: -100%;}
+}*/
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+
+/*#main-content{display:flex;}*/
+/*#main-content {
+	 display: flex;
+	 width: 100vw;
+	 height: 100vh;
+	 
+}*/
+ svg {
+	 cursor: pointer;
+	 overflow: visible;
+	 width: 40px;
+	 height: 40px;
+}
+ svg #heart {
+	 transform-origin: center;
+	 animation: animateHeartOut 0.3s linear forwards;
+}
+ svg #main-circ {
+	 transform-origin: 29.5px 29.5px;
+}
+ #checkbox {
+	 display: none;
+}
+ #checkbox:checked + label svg #heart {
+	 transform: scale(0.2);
+	 fill: #e2264d;
+	 animation: animateHeart 0.3s linear forwards 0.25s;
+}
+ #checkbox:checked + label svg #main-circ {
+	 transition: all 2s;
+	 animation: animateCircle 0.3s linear forwards;
+	 opacity: 1;
+}
+ #checkbox:checked + label svg #grp1 {
+	 opacity: 1;
+	 transition: 0.1s all 0.3s;
+}
+ #checkbox:checked + label svg #grp1 #oval1 {
+	 transform: scale(0) translate(0, -30px);
+	 transform-origin: 0 0 0;
+	 transition: 0.5s transform 0.3s;
+}
+ #checkbox:checked + label svg #grp1 #oval2 {
+	 transform: scale(0) translate(10px, -50px);
+	 transform-origin: 0 0 0;
+	 transition: 1.5s transform 0.3s;
+}
+ #checkbox:checked + label svg #grp2 {
+	 opacity: 1;
+	 transition: 0.1s all 0.3s;
+}
+ #checkbox:checked + label svg #grp2 #oval1 {
+	 transform: scale(0) translate(30px, -15px);
+	 transform-origin: 0 0 0;
+	 transition: 0.5s transform 0.3s;
+}
+ #checkbox:checked + label svg #grp2 #oval2 {
+	 transform: scale(0) translate(60px, -15px);
+	 transform-origin: 0 0 0;
+	 transition: 1.5s transform 0.3s;
+}
+ #checkbox:checked + label svg #grp3 {
+	 opacity: 1;
+	 transition: 0.1s all 0.3s;
+}
+ #checkbox:checked + label svg #grp3 #oval1 {
+	 transform: scale(0) translate(30px, 0px);
+	 transform-origin: 0 0 0;
+	 transition: 0.5s transform 0.3s;
+}
+ #checkbox:checked + label svg #grp3 #oval2 {
+	 transform: scale(0) translate(60px, 10px);
+	 transform-origin: 0 0 0;
+	 transition: 1.5s transform 0.3s;
+}
+ #checkbox:checked + label svg #grp4 {
+	 opacity: 1;
+	 transition: 0.1s all 0.3s;
+}
+ #checkbox:checked + label svg #grp4 #oval1 {
+	 transform: scale(0) translate(30px, 15px);
+	 transform-origin: 0 0 0;
+	 transition: 0.5s transform 0.3s;
+}
+ #checkbox:checked + label svg #grp4 #oval2 {
+	 transform: scale(0) translate(40px, 50px);
+	 transform-origin: 0 0 0;
+	 transition: 1.5s transform 0.3s;
+}
+ #checkbox:checked + label svg #grp5 {
+	 opacity: 1;
+	 transition: 0.1s all 0.3s;
+}
+ #checkbox:checked + label svg #grp5 #oval1 {
+	 transform: scale(0) translate(-10px, 20px);
+	 transform-origin: 0 0 0;
+	 transition: 0.5s transform 0.3s;
+}
+ #checkbox:checked + label svg #grp5 #oval2 {
+	 transform: scale(0) translate(-60px, 30px);
+	 transform-origin: 0 0 0;
+	 transition: 1.5s transform 0.3s;
+}
+ #checkbox:checked + label svg #grp6 {
+	 opacity: 1;
+	 transition: 0.1s all 0.3s;
+}
+ #checkbox:checked + label svg #grp6 #oval1 {
+	 transform: scale(0) translate(-30px, 0px);
+	 transform-origin: 0 0 0;
+	 transition: 0.5s transform 0.3s;
+}
+ #checkbox:checked + label svg #grp6 #oval2 {
+	 transform: scale(0) translate(-60px, -5px);
+	 transform-origin: 0 0 0;
+	 transition: 1.5s transform 0.3s;
+}
+ #checkbox:checked + label svg #grp7 {
+	 opacity: 1;
+	 transition: 0.1s all 0.3s;
+}
+ #checkbox:checked + label svg #grp7 #oval1 {
+	 transform: scale(0) translate(-30px, -15px);
+	 transform-origin: 0 0 0;
+	 transition: 0.5s transform 0.3s;
+}
+ #checkbox:checked + label svg #grp7 #oval2 {
+	 transform: scale(0) translate(-55px, -30px);
+	 transform-origin: 0 0 0;
+	 transition: 1.5s transform 0.3s;
+}
+ #checkbox:checked + label svg #grp2 {
+	 opacity: 1;
+	 transition: 0.1s opacity 0.3s;
+}
+ #checkbox:checked + label svg #grp3 {
+	 opacity: 1;
+	 transition: 0.1s opacity 0.3s;
+}
+ #checkbox:checked + label svg #grp4 {
+	 opacity: 1;
+	 transition: 0.1s opacity 0.3s;
+}
+ #checkbox:checked + label svg #grp5 {
+	 opacity: 1;
+	 transition: 0.1s opacity 0.3s;
+}
+ #checkbox:checked + label svg #grp6 {
+	 opacity: 1;
+	 transition: 0.1s opacity 0.3s;
+}
+ #checkbox:checked + label svg #grp7 {
+	 opacity: 1;
+	 transition: 0.1s opacity 0.3s;
+}
+ @keyframes animateCircle {
+	 40% {
+		 transform: scale(10);
+		 opacity: 1;
+		 fill: #dd4688;
+	}
+	 55% {
+		 transform: scale(11);
+		 opacity: 1;
+		 fill: #d46abf;
+	}
+	 65% {
+		 transform: scale(12);
+		 opacity: 1;
+		 fill: #cc8ef5;
+	}
+	 75% {
+		 transform: scale(13);
+		 opacity: 1;
+		 fill: transparent;
+		 stroke: #cc8ef5;
+		 stroke-width: 0.5;
+	}
+	 85% {
+		 transform: scale(17);
+		 opacity: 1;
+		 fill: transparent;
+		 stroke: #cc8ef5;
+		 stroke-width: 0.2;
+	}
+	 95% {
+		 transform: scale(18);
+		 opacity: 1;
+		 fill: transparent;
+		 stroke: #cc8ef5;
+		 stroke-width: 0.1;
+	}
+	 100% {
+		 transform: scale(19);
+		 opacity: 1;
+		 fill: transparent;
+		 stroke: #cc8ef5;
+		 stroke-width: 0;
+	}
+}
+ @keyframes animateHeart {
+	 0% {
+		 transform: scale(0.2);
+	}
+	 40% {
+		 transform: scale(1.2);
+	}
+	 100% {
+		 transform: scale(1);
+	}
+}
+ @keyframes animateHeartOut {
+	 0% {
+		 transform: scale(1.4);
+	}
+	 100% {
+		 transform: scale(1);
+	}
+}
+ 

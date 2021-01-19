@@ -1,0 +1,106 @@
+h1{
+	font-style: italic;
+	font-family: "Trebuchet MS", Garamond, Georgia;
+	letter-spacing: .10em;
+	font-size: 36px;
+	text-transform: uppercase;
+	font-weight: 100;
+	border-bottom: groove 2px #CCCCCC;
+	width: auto;
+line-height: 1em;
+}
+
+.title{
+  padding: 0.25em 0;
+  font-size: 35px;
+}
+.title:after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: -webkit-linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+  background: linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+}
+.container{
+	background-color: hsl(227, 47%, 96%,0.7);
+	margin-top: 80px;
+	padding-top: 5px;
+	margin-left: 255px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 30px;
+}
+.flex{
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	padding-top: 20px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  text-align: center;
+}
+td, th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: center;
+}
+th {
+  background-color: #A9A9A9;
+  cursor: pointer;
+}
+tr:hover{
+background-color: #dddddd;
+}	
+.add{
+  background-color: rgba(255,255,255, 0);
+    align-items: flex-start;
+    align-content: center;
+   margin: 5px;
+   align-items: center;
+   text-align-last: center;
+   font-size: 25px;
+}
+.add * {
+    display: inline-grid;
+    align-items: center;
+    text-align-last: center;
+    align-content: center;
+}
+.add a {
+    color: black;
+    text-decoration: none;
+    height: 60px;
+    width: 150px;
+    align-content: center;
+}
+.add :hover{
+  color: #4CAF50;
+}
+input.submit{
+  border:none;
+  background:#4CAF50;
+  padding:12px 35px;
+  border-radius:20px;
+  color:white;
+  font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  cursor:pointer;
+  transition: all 0.5s;
+}
+.submit:hover{
+  background-color: rgb(50,205,50);
+}
+h4{
+	color: red;
+    padding: 20px;
+    position: relative;
+    width: 250px;
+    margin-left: 320px;
+}
+img {
+height: 100px;
+	width: 100px;
+}

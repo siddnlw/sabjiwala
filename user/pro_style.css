@@ -1,0 +1,262 @@
+h1 {
+  font-style: italic;
+  font-family: "Trebuchet MS", Garamond, Georgia;
+  letter-spacing: .10em;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: 100;
+  border-bottom: groove 2px #CCCCCC;
+  width: auto;
+  line-height: 1em;
+}
+.title{
+  padding: 0.25em 0;
+  font-size: 35px;
+}
+.title:after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: -webkit-linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+  background: linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+}
+.container{
+  background-color: hsl(227, 47%, 96%,0.7);
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-top: 5px;
+  margin-left: 255px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 30px;
+}
+.flex{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.flex2{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding-top: 5px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  text-align: center;
+}
+td, th {
+  border: 0 solid #dddddd;
+  border-bottom: 1px solid #000;
+  text-align: left;
+  padding: 8px;
+}
+th {
+  background-color: #99a9aa;
+  cursor: pointer;
+  height: 30px;
+  border-top: 2px solid;
+}
+ th :hover{
+  color: white;
+}
+.addP{
+  background-color: rgba(255,255,255, 0);
+    left: 1000px;
+    right: 1270px;
+    height: 450px;*/
+    align-items: flex-start;
+    align-content: center;
+   margin: 5px;
+   align-items: center;
+   text-align-last: center;
+   font-size: 25px;
+}
+.addP * {
+    display: inline-grid;
+    align-items: center;
+    text-align-last: center;
+    align-content: center;
+}
+.addP a {
+    color: black;
+    text-decoration: none;
+    height: 60px;
+    width: 150px;
+    align-content: center;
+}
+.addP :hover{
+  color: #4CAF50;
+}
+.submit{
+  border:none;
+  background:#4CAF50;
+  padding:12px 35px;
+  border-radius:20px;
+  color:white;
+  font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  cursor:pointer;
+  transition: all 0.5s;
+}
+.submit:hover{
+  background-color: rgb(50,205,50);
+}
+h4{
+  color: red;
+    padding: 20px;
+    position: relative;
+    width: 250px;
+    margin-left: 320px;
+}
+img {
+height: 100px;
+  width: 100px;
+}
+.del{
+  border: none;
+  background-color: #FF6347;
+  height: 40px;
+  width: 60px;
+  border-radius: 25px;
+}
+.del:hover{
+  background-color: #FF4500;
+}
+.edit{
+  border: none;
+  background-color: #77d677;
+  height: 40px;
+  width: 60px;
+  border-radius: 25px;
+}
+.edit:hover{
+  background-color: #55d63b;
+}
+.cancelbtn, .deletebtn{
+  background-color: red;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  margin-left: 200px;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  opacity: 0.9;
+  border-radius: 50px;
+}
+.cancelbtn, .deletebtn:hover {
+  opacity:1;
+}
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 30%;
+  margin-left: 150px;
+}
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+/* Add padding and center-align text to the container */
+.box {
+  padding: 16px;
+  text-align: center;
+}
+@keyframes popup {
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  10%{
+    transform: scale(0.2);
+    opacity: 0.2;
+  }
+  20%{
+    transform: scale(0.4);
+  opacity: 0.4;
+  }
+  30%{
+    transform: scale(0.6);
+  opacity: 0.6;
+  }
+  40%{
+    transform: scale(0.8);
+  opacity: 0.8;
+  }
+  50%{
+    transform: scale(1);
+  }
+  
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  transition: 0.5s;
+  align-content: center;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  /*overflow: auto;*/ /* Enable scroll if needed */
+  background-color: rgb(71, 78, 93,0.9);
+  padding-top: 100px;
+  box-sizing: border-box;
+  animation: popup 0s;
+}
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 8% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  animation: popup 0.7s;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 80px;
+  font-weight: bold;
+  color: #f1f1f1;
+  transition: 0.5s;
+}
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .deletebtn {
+     width: 100%;
+  }
+}
+.in:focus{
+  background-color: #dcf4dd;
+  transition: 0.3s ease-in-out;
+}
+.in:hover:not(:focus){
+  background-color: #e5e5e5;
+}
